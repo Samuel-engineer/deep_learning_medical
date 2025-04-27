@@ -26,19 +26,12 @@ Le jeu de données PCam rend cette tâche accessible tout en étant cliniquement
 ## 🏗 Structure du projet
 
 ```bash
-├── data/
-│   ├── train/
-│   ├── test/
+├── ratt_ue_pro/
 │   └── sample_submission.csv
-├── notebooks/
-│   ├── EDA.ipynb        # Analyse exploratoire
+│   ├── notebooks/
 │   ├── Model_Training.ipynb # Entraînement des modèles
-├── models/
+│   ├── models/
 │   └── saved_model.h5
-├── src/
-│   ├── data_loader.py
-│   ├── model.py
-│   └── utils.py
-├── README.md
+│   ├── README.md
 ├── requirements.txt
 └── submission.csv
