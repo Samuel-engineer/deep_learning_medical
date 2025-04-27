@@ -24,8 +24,7 @@ Le jeu de données PCam rend cette tâche accessible tout en étant cliniquement
   - `0` : Tissu tumoral absent
 
 ## 🏗 Structure du projet
-
-    ```
+    
     ├── ratt_ue_pro/
     │   └── sample_submission.csv
     │   ├── notebooks/
@@ -39,7 +38,7 @@ Le jeu de données PCam rend cette tâche accessible tout en étant cliniquement
 🧪 Modèles et techniques utilisés
 - Entrainement ResNet avec les poids par DEFAULT pour le prototype.
 
-- Data Augmentation pour augmenter la robustesse (rotations, flips horizontal,).
+- Data Augmentation pour augmenter la robustesse (rotations, flips horizontal, Resize, Normalization).
 
 - Optimisation avec Adam.
 
