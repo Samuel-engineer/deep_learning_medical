@@ -35,7 +35,7 @@ Le jeu de données PCam rend cette tâche accessible tout en étant cliniquement
     ├── requirements.txt
     └── submission.csv
 
-🧪 Modèles et techniques utilisés
+## 🧪 Modèles et techniques utilisés
 - Entrainement ResNet avec les poids par DEFAULT pour le prototype.
 
 - Data Augmentation pour augmenter la robustesse (rotations, flips horizontal, Resize, Normalization).
@@ -45,7 +45,7 @@ Le jeu de données PCam rend cette tâche accessible tout en étant cliniquement
 - Métrique d'évaluation : Area Under the ROC Curve (AUC) / Accuracy (Correct/ Total).
 
 
-📈 Résultats
+## 📈 Résultats
 Score de validation interne : ~0.99 AUC
 
 Modèle léger : entraînable en quelques minutes sur un GPU/CPU (1% de la data)
