@@ -32,7 +32,10 @@ Le jeu de données PCam rend cette tâche accessible tout en étant cliniquement
     │   ├── best_model.pth
     │   ├── README.md
     │   ├── app.py # Application
-    │   ├── train_labels.csv # images associés aux labels
+    │   ├── train_labels.csv # images associés aux labels 
+    │   ├── requirements-app.txt
+    │   ├── requirements-notebook.txt
+
 
 
 ## 🧪 Modèles et techniques utilisés
