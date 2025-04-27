@@ -16,9 +16,9 @@ Le jeu de données PCam rend cette tâche accessible tout en étant cliniquement
 
 ## 🗂 Dataset
 
-- **Source** : [PatchCamelyon Dataset (PCam)](https://github.com/basveeling/pcam)
+- **Source** : https://www.kaggle.com/c/histopathologic-cancer-detection/data
 - **Licence** : CC0 (domaine public)
-- **Images** : 327,680 patches (96x96 pixels, couleur)
+- **Images** : 220,025 patches (96x96 pixels, couleur)
 - **Labels** : 
   - `1` : Tissu tumoral présent
   - `0` : Tissu tumoral absent
