@@ -4,7 +4,7 @@ Détection automatique de tissus tumoraux à partir d'images microscopiques num�
 
 ## 📋 Description
 
-Ce projet vise à construire un modèle de classification binaire capable de prédire la présence de métastases dans de petites images (patches) extraites de lames histopathologiques numériques.
+Ce projet vise à construire une application pour ordinateur basée sur un modèle de classification binaire capable de prédire la présence de métastases dans de petites images (patches) extraites de lames histopathologiques numériques.
 
 Le jeu de données PCam rend cette tâche accessible tout en étant cliniquement pertinente, idéale pour l'expérimentation en machine learning.
 
@@ -25,16 +25,16 @@ Le jeu de données PCam rend cette tâche accessible tout en étant cliniquement
 
 ## 🏗 Structure du projet
 
-    ```bash
-    ├── ratt_ue_pro/
-    │   └── sample_submission.csv
-    │   ├── notebooks/
-    │   ├── Model_Training.ipynb # Entraînement des modèles
-    │   ├── models/
-    │   └── saved_model.h5
-    │   ├── README.md
-    ├── requirements.txt
-    └── submission.csv
+```bash
+├── ratt_ue_pro/
+│   └── sample_submission.csv
+│   ├── notebooks/
+│   ├── Model_Training.ipynb # Entraînement des modèles
+│   ├── models/
+│   └── saved_model.h5
+│   ├── README.md
+├── requirements.txt
+└── submission.csv
 
 🧪 Modèles et techniques utilisés
 - Entrainement ResNet avec les poids par DEFAULT pour le prototype.
@@ -45,8 +45,10 @@ Le jeu de données PCam rend cette tâche accessible tout en étant cliniquement
 
 - Métrique d'évaluation : Area Under the ROC Curve (AUC) / Accuracy (Correct/ Total).
 
+
 📈 Résultats
 Score de validation interne : ~0.99 AUC
 
-Modèle léger : entraînable en quelques minutes sur un GPU/CPU (1% de la data).
+Modèle léger : entraînable en quelques minutes sur un GPU/CPU (1% de la data)
+
 Modèle lourd : entraînable en quelques heures sur un GPU unique.
