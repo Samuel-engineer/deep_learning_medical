@@ -37,10 +37,16 @@ Le jeu de données PCam rend cette tâche accessible tout en étant cliniquement
     └── submission.csv
 
 🧪 Modèles et techniques utilisés
-CNN (Convolutional Neural Networks) simples pour le prototype.
+- Entrainement ResNet avec les poids par DEFAULT pour le prototype.
 
-Data Augmentation pour augmenter la robustesse (rotations, flips, zooms).
+- Data Augmentation pour augmenter la robustesse (rotations, flips horizontal,).
 
-Optimisation avec Adam.
+- Optimisation avec Adam.
 
-Métrique d'évaluation : Area Under the ROC Curve (AUC).
+- Métrique d'évaluation : Area Under the ROC Curve (AUC) / Accuracy (Correct/ Total).
+
+📈 Résultats
+Score de validation interne : ~0.99 AUC
+
+Modèle léger : entraînable en quelques minutes sur un GPU/CPU (1% de la data).
+Modèle lourd : entraînable en quelques heures sur un GPU unique.
