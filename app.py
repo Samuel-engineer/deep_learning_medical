@@ -101,6 +101,8 @@ class CancerDetectionApp:
         self.current_image_path = None
         self.original_image = None
         self.processed_tensor = None
+        self.fig = None
+        self.canvas = None
         
         # Set up Grad-CAM
         target_layer = self.model.resnet.layer4[-1].conv2
@@ -226,6 +228,24 @@ class CancerDetectionApp:
                              relief=tk.SUNKEN, anchor=tk.W)
         status_bar.pack(side=tk.BOTTOM, fill=tk.X)
 
+    def clear_matplotlib_figure(self):
+        """Properly clean up matplotlib figure and canvas"""
+        if self.fig is not None:
+            plt.close(self.fig)
+            self.fig = None
+        
+        if self.canvas is not None:
+            self.canvas.get_tk_widget().destroy()
+            self.canvas = None
+            
+        # Reset the gradcam frame contents
+        for widget in self.gradcam_frame.winfo_children():
+            widget.destroy()
+            
+        self.gradcam_label = tk.Label(self.gradcam_frame, bg="#ffffff", 
+                                      text="Grad-CAM will appear here", font=("Arial", 12))
+        self.gradcam_label.pack(fill=tk.BOTH, expand=True)
+
     def select_image(self):
         # Open file dialog
         filetypes = [
@@ -236,6 +256,9 @@ class CancerDetectionApp:
         
         if image_path:
             try:
+                # Clean up previous matplotlib objects
+                self.clear_matplotlib_figure()
+                
                 # Load and display the image
                 self.current_image_path = image_path
                 self.status_var.set(f"Selected image: {os.path.basename(image_path)}")
@@ -244,9 +267,6 @@ class CancerDetectionApp:
                 self.result_label.config(text="")
                 for widget in self.conf_frame.winfo_children():
                     widget.destroy()
-                
-                # Clear previous Grad-CAM
-                self.gradcam_label.config(image="", text="Grad-CAM will appear here")
                 
                 # Load and save original image
                 self.original_image = Image.open(image_path)
@@ -268,6 +288,8 @@ class CancerDetectionApp:
                 messagebox.showerror("Error", f"Failed to load image: {str(e)}")
                 self.status_var.set("Error loading image")
                 print(f"Image loading error: {str(e)}")
+                import traceback
+                traceback.print_exc()
 
     def predict(self):
         if not self.current_image_path or self.processed_tensor is None:
@@ -344,6 +366,9 @@ class CancerDetectionApp:
     def generate_gradcam(self):
         """Generate and display Grad-CAM visualization"""
         try:
+            # Clean up previous matplotlib objects
+            self.clear_matplotlib_figure()
+            
             # Generate class activation map
             cam = self.grad_cam.generate_cam(self.processed_tensor)
             
@@ -358,7 +383,7 @@ class CancerDetectionApp:
             superimposed = cv2.addWeighted(img_array, 0.6, heatmap, 0.4, 0)
             
             # Create figure for plotting
-            fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(8, 4))
+            self.fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(8, 4))
             
             # Original with heatmap overlay
             ax1.imshow(superimposed)
@@ -376,9 +401,9 @@ class CancerDetectionApp:
             for widget in self.gradcam_frame.winfo_children():
                 widget.destroy()
                 
-            canvas = FigureCanvasTkAgg(fig, master=self.gradcam_frame)
-            canvas.draw()
-            canvas.get_tk_widget().pack(fill=tk.BOTH, expand=True)
+            self.canvas = FigureCanvasTkAgg(self.fig, master=self.gradcam_frame)
+            self.canvas.draw()
+            self.canvas.get_tk_widget().pack(fill=tk.BOTH, expand=True)
             
         except Exception as e:
             messagebox.showerror("Error", f"Error generating Grad-CAM: {str(e)}")
