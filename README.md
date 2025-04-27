@@ -27,13 +27,13 @@ Le jeu de données PCam rend cette tâche accessible tout en étant cliniquement
     
     ├── ratt_ue_pro/
     │   └── sample_submission.csv
-    │   ├── notebooks/
-    │   ├── Model_Training.ipynb # Entraînement des modèles
-    │   ├── models/
-    │   └── saved_model.h5
+    │   ├── Notebook_project.ipynb
+    │   ├── model_creation.ipynb # 1% of data 
+    │   ├── best_model.pth
     │   ├── README.md
-    ├── requirements.txt
-    └── submission.csv
+    │   ├── app.py # Application
+    │   ├── train_labels.csv # images associés aux labels
+
 
 ## 🧪 Modèles et techniques utilisés
 - Entrainement ResNet avec les poids par DEFAULT pour le prototype.
