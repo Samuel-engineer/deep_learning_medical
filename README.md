@@ -25,16 +25,16 @@ Le jeu de données PCam rend cette tâche accessible tout en étant cliniquement
 
 ## 🏗 Structure du projet
 
-```bash
-├── ratt_ue_pro/
-│   └── sample_submission.csv
-│   ├── notebooks/
-│   ├── Model_Training.ipynb # Entraînement des modèles
-│   ├── models/
-│   └── saved_model.h5
-│   ├── README.md
-├── requirements.txt
-└── submission.csv
+    ```
+    ├── ratt_ue_pro/
+    │   └── sample_submission.csv
+    │   ├── notebooks/
+    │   ├── Model_Training.ipynb # Entraînement des modèles
+    │   ├── models/
+    │   └── saved_model.h5
+    │   ├── README.md
+    ├── requirements.txt
+    └── submission.csv
 
 🧪 Modèles et techniques utilisés
 - Entrainement ResNet avec les poids par DEFAULT pour le prototype.
