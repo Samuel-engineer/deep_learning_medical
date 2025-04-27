@@ -25,13 +25,22 @@ Le jeu de données PCam rend cette tâche accessible tout en étant cliniquement
 
 ## 🏗 Structure du projet
 
-```bash
-├── ratt_ue_pro/
-│   └── sample_submission.csv
-│   ├── notebooks/
-│   ├── Model_Training.ipynb # Entraînement des modèles
-│   ├── models/
-│   └── saved_model.h5
-│   ├── README.md
-├── requirements.txt
-└── submission.csv
+    ```bash
+    ├── ratt_ue_pro/
+    │   └── sample_submission.csv
+    │   ├── notebooks/
+    │   ├── Model_Training.ipynb # Entraînement des modèles
+    │   ├── models/
+    │   └── saved_model.h5
+    │   ├── README.md
+    ├── requirements.txt
+    └── submission.csv
+
+🧪 Modèles et techniques utilisés
+CNN (Convolutional Neural Networks) simples pour le prototype.
+
+Data Augmentation pour augmenter la robustesse (rotations, flips, zooms).
+
+Optimisation avec Adam.
+
+Métrique d'évaluation : Area Under the ROC Curve (AUC).
