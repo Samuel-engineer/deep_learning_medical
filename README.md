@@ -1,7 +1,7 @@
 # 🧬 Histopathologic Cancer Detection - PatchCamelyon (PCam)
 
 Détection automatique de tissus tumoraux à partir d'images microscopiques numériques à l'aide du dataset **PatchCamelyon (PCam)**.
-![Logo](assets/image.png)
+![Logo](assets/image.jpeg)
 
 ## 📋 Description
 
